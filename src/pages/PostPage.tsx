@@ -1,7 +1,46 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { MenuBar } from '../components/menubar';
 import { TextField } from '../components/TextField';
+import DateTimePicker from 'react-datetime-picker';
+
+//useEffect(() => {}, []);
 
 export const PostPage = () => {
+  const { push } = useHistory();
+  const [brand, setBrand] = useState('');
+  const [proption, setProption] = useState('');
+  const [prname, setPrname] = useState('');
+  const [prno, setPrno] = useState('');
+  const [additional, setAdditional] = useState('');
+  const [due, onDueChange] = useState(new Date());
+  const { replace } = useHistory();
+
+  const posting = () => {
+    axios
+      .post('http://localhost:1337/api/posts/', {
+        data: {
+          due: due,
+          brand: brand,
+          prOption: proption,
+          prName: prname,
+          prNo: prno,
+          additional: additional,
+          userid: localStorage.getItem('userid'),
+        },
+      })
+      .then((response) => {
+        // Handle success.
+        console.log('Well done!');
+        replace('/');
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log('An error occurred:', error.response);
+      });
+  };
+
   return (
     <>
       <div className="bg-gray-100 py-8 mx-auto w-[400px]">
@@ -12,7 +51,7 @@ export const PostPage = () => {
                 <div className="mt-4 mb-4 mx-4 grid grid-cols-1 space-y-2">
                   <div className="flex items-center justify-center w-full">
                     <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-                      <div className="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
+                      <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
                         <div className="w-full flex items-center justify-center mb-6 mt-8">
                           <button className="flex items-center hover:text-orange-600 dark:text-orange-300 text-orange-600 border-0 focus:outline-none">
                             <svg
@@ -55,190 +94,45 @@ export const PostPage = () => {
           <div className="flex max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg overflow-hidden mx-auto">
             <div className="flex items-center w-full">
               <div className="w-full">
-                <div className="mx-4 mt-4 mb-4 content-center w-full">
-                  <div className="text-black-600 text-sm ">마감</div>
-
-                  <div className="flex mt-1 relative rounded-md shadow-sm">
-                    <select
-                      className="block w-20 text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                      name="animals"
-                    >
-                      <option value="">__월</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                    <select
-                      className="block w-20 mx-2 text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                      name="animals"
-                    >
-                      <option value="">__일</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                      <option value="16">16</option>
-                      <option value="17">17</option>
-                      <option value="18">18</option>
-                      <option value="19">19</option>
-                      <option value="20">20</option>
-                      <option value="21">21</option>
-                      <option value="22">22</option>
-                      <option value="23">23</option>
-                      <option value="24">24</option>
-                      <option value="25">25</option>
-                      <option value="26">26</option>
-                      <option value="27">27</option>
-                      <option value="28">28</option>
-                      <option value="29">29</option>
-                      <option value="30">30</option>
-                      <option value="31">31</option>
-                    </select>
-                    <select
-                      className="block w-20   text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                      name="animals"
-                    >
-                      <option value="">__시</option>
-                      <option value="00">00</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                      <option value="16">16</option>
-                      <option value="17">17</option>
-                      <option value="18">18</option>
-                      <option value="19">19</option>
-                      <option value="20">20</option>
-                      <option value="21">21</option>
-                      <option value="22">22</option>
-                      <option value="23">23</option>
-                    </select>
-                    <select
-                      className="block w-20 mx-2 text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                      name="animals"
-                    >
-                      <option value="">__분</option>
-                      <option value="00">00</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                      <option value="16">16</option>
-                      <option value="17">17</option>
-                      <option value="18">18</option>
-                      <option value="19">19</option>
-                      <option value="20">20</option>
-                      <option value="21">21</option>
-                      <option value="22">22</option>
-                      <option value="23">23</option>
-                      <option value="24">24</option>
-                      <option value="25">25</option>
-                      <option value="26">26</option>
-                      <option value="27">27</option>
-                      <option value="28">28</option>
-                      <option value="29">29</option>
-                      <option value="30">30</option>
-                      <option value="31">31</option>
-                      <option value="32">32</option>
-                      <option value="33">33</option>
-                      <option value="34">34</option>
-                      <option value="35">35</option>
-                      <option value="36">36</option>
-                      <option value="37">37</option>
-                      <option value="38">38</option>
-                      <option value="39">39</option>
-                      <option value="40">40</option>
-                      <option value="41">41</option>
-                      <option value="42">42</option>
-                      <option value="43">43</option>
-                      <option value="44">44</option>
-                      <option value="45">45</option>
-                      <option value="46">46</option>
-                      <option value="47">47</option>
-                      <option value="48">48</option>
-                      <option value="49">49</option>
-                      <option value="50">50</option>
-                      <option value="51">51</option>
-                      <option value="52">52</option>
-                      <option value="53">53</option>
-                      <option value="54">54</option>
-                      <option value="55">55</option>
-                      <option value="56">56</option>
-                      <option value="57">57</option>
-                      <option value="58">58</option>
-                      <option value="59">59</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg overflow-hidden mx-auto">
-            <div className="flex items-center w-full">
-              <div className="w-full">
                 <div className="content-center w-full">
                   <div className="mx-4 mt-4">
-                    <TextField label="브랜드명" placeholder=" " />
+                    <TextField
+                      label="브랜드명"
+                      placeholder=" "
+                      onChange={(e) => setBrand(e.target.value)}
+                      value={brand}
+                    />
                   </div>
                   <div className="mx-4 mt-4 mb-4">
-                    <TextField label="제품명" placeholder=" " />
+                    <TextField
+                      label="제품명"
+                      placeholder=" "
+                      onChange={(e) => setPrname(e.target.value)}
+                      value={prname}
+                    />
                   </div>
                   <div className="mx-4 mt-4 mb-4">
-                    <TextField label="옵션" placeholder=" " />
+                    <TextField
+                      label="옵션"
+                      placeholder=" "
+                      onChange={(e) => setProption(e.target.value)}
+                      value={proption}
+                    />
                   </div>
                   <div className="mx-4 mt-4 mb-4">
                     <TextField
                       label="제품 번호"
                       placeholder="제품의 상세페이지 하단을 참고하세요. "
+                      onChange={(e) => setPrno(e.target.value)}
+                      value={prno}
                     />
                   </div>
                   <div className="mx-4 mt-4 mb-4">
                     <TextField
                       label="추가 요청 사항"
                       placeholder="연락처를 남기지 않도록 주의하세요"
+                      onChange={(e) => setAdditional(e.target.value)}
+                      value={additional}
                     />
                     <p className="mt-1 mx-1 mb-4 text-xs text-gray-400">
                       <span>
@@ -252,6 +146,18 @@ export const PostPage = () => {
             </div>
           </div>
 
+          <div className="flex flex-col max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg mx-auto">
+            <span className="text-black-600 text-sm mx-4 mt-4 ">마감</span>
+            <div className="flex mt-1 relative rounded-md shadow-sm">
+              <DateTimePicker
+                onChange={onDueChange}
+                value={due}
+                className="mx-4 mb-4 w-full border-"
+                calendarClassName="border-0 border-2"
+              />
+            </div>
+          </div>
+
           <div className="flex justify-start  ">
             <div className="flex justify-end w-full ">
               <button
@@ -259,7 +165,12 @@ export const PostPage = () => {
                 className="p-1 focus:outline-none focus:shadow-none hover:text-blue-500"
               >
                 <div className="flex justify-end space-x-3 ">
-                  <div className="bg-orange-600 rounded-md text-white text-center py-2 px-3 test-xs focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                  <div
+                    className="bg-orange-600 rounded-md text-white text-center py-2 px-3 test-xs focus:ring-purple-500 focus:ring-offset-purple-200 w-full transition ease-in duration-200 text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    onClick={() => {
+                      posting();
+                    }}
+                  >
                     글 등록
                   </div>
                 </div>
@@ -267,8 +178,8 @@ export const PostPage = () => {
             </div>
           </div>
         </div>
+        <MenuBar />
       </div>
-      ;
     </>
   );
 };

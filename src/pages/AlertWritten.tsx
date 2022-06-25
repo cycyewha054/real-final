@@ -1,16 +1,29 @@
 import React from 'react';
 import { TextField } from '../components/TextField';
+import { useHistory } from 'react-router-dom';
+import { MenuBar } from '../components/menubar';
 
 export const AlertWrittenPage = () => {
+  const { push } = useHistory();
   return (
     <>
       <div className="bg-gray-100 pt-8 pb-36 mx-auto w-[400px] ">
         <div className="flex flex-row w-full justify-between ">
           <div className=" border mx-4 mb-4 w-full rounded-xl shadow-sm">
-            <button className="py-2 w-1/2 rounded-l-xl text-white  bg-orange-600 hover:bg-red-600 transition">
+            <button
+              className="py-2 w-1/2 rounded-l-xl text-white  bg-orange-600 hover:bg-red-600 transition"
+              onClick={() => {
+                push('alertwritten');
+              }}
+            >
               나의 요청
             </button>
-            <button className=" py-2 w-1/2 rounded-r-xl bg-neutral-50 hover:bg-neutral-100 transition">
+            <button
+              className=" py-2 w-1/2 rounded-r-xl bg-neutral-50 hover:bg-neutral-100 transition"
+              onClick={() => {
+                push('alertoption');
+              }}
+            >
               옵션
             </button>
           </div>
@@ -329,6 +342,7 @@ export const AlertWrittenPage = () => {
             </div>
           </div>
         </div>
+        <MenuBar />
       </div>
     </>
   );

@@ -20,7 +20,7 @@ export const Router = () => {
       <Route path="/alertoption" component={AlertOptionPage} />
       <Route path="/alertwritten" component={AlertWrittenPage} />
       <Route path="/coin" component={CoinPage} />
-      <Route path="/postoption" component={PostOptionPage} />
+      <Route path="/postoption/:postId" component={PostOptionPage} />
       <Route path="/optionselect" component={OptionSelectPage} />
       <Route path="/plus" component={PlusPage} />
       <Route path="/post" component={PostPage} />

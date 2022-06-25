@@ -7,6 +7,7 @@ export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { replace } = useHistory();
+  const { push } = useHistory();
 
   const checkUser = () => {
     if (email === '' || password === '') {
@@ -23,6 +24,8 @@ export const LoginPage = () => {
         console.log('Well done!');
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('userid', response.data.user.id);
+
         replace('/');
       })
       .catch((error) => {
@@ -84,7 +87,7 @@ export const LoginPage = () => {
             <div className="flex w-full">
               <button
                 type="submit"
-                className="py-2 px-4 py-4  bg-orange-600  focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
+                className=" px-4 py-6  bg-orange-600  focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
                 onClick={() => {
                   checkUser();
                 }}
@@ -95,8 +98,10 @@ export const LoginPage = () => {
           </div>
           <div className="flex w-full">
             <button
-              type="submit"
-              className="py-2 px-4 py-4  bg-white   focus:ring-purple-500 focus:ring-offset-purple-200 text-gray w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
+              className="px-4 py-6  bg-white   focus:ring-purple-500 focus:ring-offset-purple-200 text-gray w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
+              onClick={() => {
+                push('signup');
+              }}
             >
               회원가입
             </button>

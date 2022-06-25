@@ -1,7 +1,45 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { TextField } from '../components/TextField';
+import { useHistory, useParams } from 'react-router-dom';
+import { MenuBar } from '../components/menubar';
 
 export const PostOptionPage = () => {
+  const { push } = useHistory();
+  const { postId } = useParams<{ postId: string }>();
+  console.log('postId : ', postId);
+  const [brand, setBrand] = useState('');
+  const [proption, setProption] = useState('');
+  const [prname, setPrname] = useState('');
+  const [prno, setPrno] = useState('');
+  const [additional, setAdditional] = useState('');
+  const [due, onDueChange] = useState(new Date());
+  const { replace } = useHistory();
+
+  const posting = () => {
+    axios
+      .post(`http://localhost:1337/api/posts/{postId}`, {
+        data: {
+          due: due,
+          brand: brand,
+          prOption: proption,
+          prName: prname,
+          prNo: prno,
+          additional: additional,
+          userid: localStorage.getItem('userid'),
+        },
+      })
+      .then((response) => {
+        // Handle success.
+        console.log('Well done!');
+        replace('/');
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log('An error occurred:', error.response);
+      });
+  };
+
   return (
     <div className="bg-gray-100  py-8 mx-auto w-[400px]">
       <div className="grid grid-cols-1 gap-6 my-6 px-4 md:px-6 lg:px-8">
@@ -11,7 +49,7 @@ export const PostOptionPage = () => {
               <div className="mt-4 mb-2 mx-4 grid grid-cols-1 space-y-2">
                 <div className="flex items-center justify-center w-full">
                   <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-                    <div className="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
+                    <div className="h-full w-full text-center flex flex-col items-center justify-center  ">
                       <div className="w-full flex items-center justify-center mb-6 mt-8">
                         <button className="flex items-center hover:text-orange-600 dark:text-orange-300 text-orange-600 border-0 focus:outline-none">
                           <svg
@@ -146,6 +184,7 @@ export const PostOptionPage = () => {
           </div>
         </div>
       </div>
+      <MenuBar />
     </div>
   );
 };

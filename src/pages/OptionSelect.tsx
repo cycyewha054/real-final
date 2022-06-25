@@ -1,10 +1,13 @@
 import React from 'react';
 import { TextField } from '../components/TextField';
+import { useHistory } from 'react-router-dom';
+import { MenuBar } from '../components/menubar';
 
 export const OptionSelectPage = () => {
+  const { push } = useHistory();
   return (
     <>
-      <div className="bg-gray-100 py-8 mx-auto w-[400px]">
+      <div className="bg-gray-100 py-8 mx-auto w-[400px] mb-16">
         <div className="grid grid-cols-1 gap-6  px-4 md:px-6 lg:px-8">
           <div className="">
             <div className="flex max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg overflow-hidden mx-auto">
@@ -59,7 +62,7 @@ export const OptionSelectPage = () => {
 
                   <ul className="flex w-full flex-col divide divide-y">
                     <li className="flex mx-2 flex-row">
-                      <div className="flex justify-between select-none cursor-pointer flex flex-1 items-center p-4">
+                      <div className=" bg-white hover:bg-gray-200 duration-200 justify-between select-none cursor-pointer flex flex-1 items-center p-4">
                         <div className="">
                           <a href="#" className="block relative">
                             <img
@@ -77,8 +80,8 @@ export const OptionSelectPage = () => {
                       </div>
                     </li>
 
-                    <li className="flex mx-2 flex-row">
-                      <div className="flex justify-between select-none cursor-pointer flex flex-1 items-center p-4">
+                    <li className=" mx-2 flex-row">
+                      <div className=" bg-white hover:bg-gray-200 duration-200 justify-between select-none cursor-pointer flex flex-1 items-center p-4">
                         <div className="">
                           <a href="#" className="block relative">
                             <img
@@ -97,7 +100,7 @@ export const OptionSelectPage = () => {
                     </li>
 
                     <li className="flex mx-2 mb-2 flex-row">
-                      <div className="flex justify-between select-none cursor-pointer flex flex-1 items-center p-4">
+                      <div className="bg-white hover:bg-gray-200 duration-200   justify-between select-none cursor-pointer flex flex-1 items-center p-4">
                         <div className="">
                           <a href="#" className="block relative">
                             <img
@@ -120,14 +123,19 @@ export const OptionSelectPage = () => {
             </div>
           </div>
 
-          <div className="flex justify-start  ">
+          <div className="flex justify-start mb-4 ">
             <div className="flex justify-end w-full ">
               <button
                 type="submit"
                 className="p-1 focus:outline-none focus:shadow-none hover:text-blue-500"
               >
                 <div className="flex justify-end space-x-3 ">
-                  <div className="bg-orange-600 rounded-md text-white text-center py-2 px-3 test-xs focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                  <div
+                    className="bg-orange-500 hover:bg-orange-600 shadow-md rounded-md text-white text-center py-2 px-3 test-xs"
+                    onClick={() => {
+                      push('postoption');
+                    }}
+                  >
                     옵션 선택
                   </div>
                 </div>
@@ -135,6 +143,7 @@ export const OptionSelectPage = () => {
             </div>
           </div>
         </div>
+        <MenuBar />
       </div>
     </>
   );

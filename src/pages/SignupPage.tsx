@@ -9,6 +9,7 @@ export const SignupPage = () => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
   const { replace } = useHistory();
+  const { push } = useHistory();
 
   const register = () => {
     axios
@@ -24,7 +25,8 @@ export const SignupPage = () => {
         console.log('User profile', response.data.user);
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
-        replace('/login');
+        localStorage.setItem('userid', response.data.user.id);
+        replace('/');
       })
       .catch((error) => {
         // Handle error.
@@ -94,25 +96,13 @@ export const SignupPage = () => {
             </div>
           </div>
         </div>
-        <script
-          data-name="BMC-Widget"
-          data-cfasync="false"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-          data-id="matheusgongo"
-          data-description="Support me on Buy me a coffee!"
-          data-message="Thank you for visiting! :D"
-          data-color="#BD5FFF"
-          data-position="Right"
-          data-x_margin="18"
-          data-y_margin="18"
-        ></script>
 
         <div className="mt-16 mb-24 px-4">
           <div className="flex  mb-4 ">
             <div className="flex w-full">
               <button
                 type="submit"
-                className="py-2 px-4 py-4  bg-orange-600  focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
+                className=" px-4 py-6  bg-orange-600  focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full "
                 onClick={() => {
                   register();
                 }}

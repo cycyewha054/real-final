@@ -1,7 +1,10 @@
 import React from 'react';
 import { TextField } from '../components/TextField';
+import { useHistory } from 'react-router-dom';
+import { MenuBar } from '../components/menubar';
 
 export const CoinPage = () => {
+  const { push } = useHistory();
   return (
     <div className="bg-gray-100 py-8 mx-auto w-[400px] ">
       <div className="grid mt-12 mb-24 grid-cols-1 gap-6  px-4 md:px-6 lg:px-8">
@@ -119,6 +122,7 @@ export const CoinPage = () => {
           </div>
         </div>
       </div>
+      <MenuBar />
     </div>
   );
 };
