@@ -18,7 +18,7 @@ export const PostOptionPage = () => {
 
   const postoption = () => {
     axios
-      .post(`http://localhost:1337/api/posts/{postId}`, {
+      .post(`https://startup-coding-1602054.herokuapp.com/api/posts/{postId}`, {
         data: {
           due: due,
           brand: brand,
@@ -175,7 +175,7 @@ export const PostOptionPage = () => {
               type="submit"
               className="focus:outline-none focus:shadow-none hover:text-blue-500"
             >
-              <div className="flex max-w-xl space-x-3 ">
+              <div className="flex max-w-xl mb-8 space-x-3 ">
                 <div className="bg-orange-600 rounded-md text-white text-center py-2 px-3 test-xs">
                   글 등록
                 </div>

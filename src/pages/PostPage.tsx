@@ -15,13 +15,11 @@ export const PostPage = () => {
   const [prno, setPrno] = useState('');
   const [additional, setAdditional] = useState('');
   const [due, onDueChange] = useState(new Date());
-  // const [userid, setUserid] = useState('');
-
   const { replace } = useHistory();
 
   const posting = () => {
     axios
-      .post('http://localhost:1337/api/posts/', {
+      .post('https://startup-coding-1602054.herokuapp.com/api/posts/', {
         data: {
           due: due,
           brand: brand,
@@ -35,8 +33,6 @@ export const PostPage = () => {
       .then((response) => {
         // Handle success.
         console.log('Well done!');
-        localStorage.setItem('token', response.data.jwt);
-        localStorage.setItem('userid', response.data.user.id);
         replace('/');
       })
       .catch((error) => {

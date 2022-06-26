@@ -13,12 +13,15 @@ export const SignupPage = () => {
 
   const register = () => {
     axios
-      .post('http://localhost:1337/api/auth/local/register', {
-        username: name,
-        email: email,
-        password: password,
-        nickname: nickname,
-      })
+      .post(
+        'https://startup-coding-1602054.herokuapp.com/api/auth/local/register',
+        {
+          username: name,
+          email: email,
+          password: password,
+          nickname: nickname,
+        }
+      )
       .then((response) => {
         // Handle success.
         console.log('Well done!');
@@ -26,8 +29,6 @@ export const SignupPage = () => {
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
         localStorage.setItem('userid', response.data.user.id);
-        // localStorage.setItem('username', response.data.user.name);
-
         replace('/');
       })
       .catch((error) => {

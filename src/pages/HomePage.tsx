@@ -22,7 +22,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:1337/api/posts' + query)
+      .get('https://startup-coding-1602054.herokuapp.com/api/posts' + query)
       .then((res) => res.data.data)
       .then((data) => {
         console.log('data : ', data);
@@ -82,12 +82,16 @@ export const HomePage = () => {
                   <div className="flex items-center w-full">
                     <div className="w-full">
                       <div className="flex flex-row mt-2 px-2 py-3 mx-3">
-                        <div className="w-auto h-auto rounded-full ">
-                          <img
-                            className="w-14 h-14 object-cover rounded-full shadow cursor-pointer"
-                            alt="User avatar"
-                            src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200"
-                          />
+                        <div className="w-14 h-14 object-cover rounded-full text-gray-400 shadow ">
+                          <svg
+                            width="auto"
+                            height="auto"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                          >
+                            <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
+                          </svg>
                         </div>
                         <div className="flex flex-col mb-2 ml-4 mt-1">
                           <div className="text-black-600 text-sm font-semibold">

@@ -1,5 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { FiMenu } from 'react-icons/fi';
+import {
+  HiUser,
+  HiOutlineUser,
+  HiHome,
+  HiOutlineHome,
+  HiOutlineMenu,
+  HiMenu,
+} from 'react-icons/hi';
 
 export const MenuBar = () => {
   const { push } = useHistory();
@@ -11,21 +20,24 @@ export const MenuBar = () => {
           <div className="flex">
             <button
               type="submit"
-              className=" focus:outline-none w-full focus:shadow-none hover:text-blue-500"
+              className=" focus:outline-none w-full focus:shadow-none "
             >
               <div className="flex w-full space-x-3 ">
-                <div className="flex bg-white w-full  text-gray-700 text-center py-2 ">
+                <div className="flex bg-white w-full  text-gray-700  text-center py-2 ">
                   <div
-                    className=" my-2 w-full text-xl"
+                    className=" my-2 w-full text-3xl"
                     onClick={() => {
                       push('alertwritten');
                     }}
                   >
-                    👤
+                    <div className="flex items-center mx-auto justify-center  h-10 w-10 rounded-full hover:text-orange-600  text-orange-300">
+                      <HiUser />
+                    </div>
                   </div>
                 </div>
               </div>
             </button>
+
             <button
               type="submit"
               className=" focus:outline-none w-full focus:shadow-none hover:text-blue-500"
@@ -33,12 +45,14 @@ export const MenuBar = () => {
               <div className="flex w-full space-x-3 ">
                 <div className="flex bg-white w-full  text-gray-700 text-center py-2 ">
                   <div
-                    className=" my-2 w-full text-xl"
+                    className=" my-2 w-full text-3xl"
                     onClick={() => {
                       push('/');
                     }}
                   >
-                    🏠
+                    <div className="flex items-center mx-auto justify-center  h-10 w-10 rounded-full hover:text-orange-600  text-orange-300">
+                      <HiHome />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -50,12 +64,14 @@ export const MenuBar = () => {
               <div className="flex w-full space-x-3 ">
                 <div className="flex bg-white w-full  text-gray-700 text-center py-2 ">
                   <div
-                    className=" my-3 w-full text-sm"
+                    className=" my-2 w-full text-3xl"
                     onClick={() => {
-                      push('plus');
+                      push('/plus');
                     }}
                   >
-                    ⚫️ ⚫️ ⚫️
+                    <div className="flex items-center mx-auto justify-center  h-10 w-10 rounded-full  hover:text-orange-600  text-orange-300">
+                      <FiMenu />
+                    </div>
                   </div>
                 </div>
               </div>
