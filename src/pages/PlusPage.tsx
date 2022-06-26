@@ -20,13 +20,13 @@ export const PlusPage = () => {
                   </div>
                   <div className="flex mx-6  space-x-2 text-sm">
                     <div className="max-w-xl">
-                      <div className="text-gray-500  py-1 px-2">아이디</div>
-                      <div className="text-gray-500  py-1 px-2">닉네임</div>
+                      <div className="text-gray-500  py-1 px-2">회원번호</div>
                       <div className="text-gray-500  py-1 px-2">코인</div>
                     </div>
                     <div>
-                      <div className="text-black  py-1 px-4">ewha1313</div>
-                      <div className="text-black  py-1 px-4">대현동불주먹</div>
+                      <div className="text-black  py-1 px-4">
+                        {localStorage.getItem('userid')}
+                      </div>
                       <div className="text-black  py-1 px-4">3700🔹</div>
                     </div>
                   </div>
@@ -142,7 +142,7 @@ export const PlusPage = () => {
             <nav className="mt-6">
               <div>
                 <a
-                  className="w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500  border-r-4 border-blue-500"
+                  className="w-full font-thin uppercase text-blue-500 flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-gradient-to-r from-white to-blue-100 border-r-4 border-blue-500"
                   href="#"
                 >
                   <span className="mx-4 text-sm font-normal">Dashboard</span>

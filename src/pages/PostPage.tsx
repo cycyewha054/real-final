@@ -15,6 +15,8 @@ export const PostPage = () => {
   const [prno, setPrno] = useState('');
   const [additional, setAdditional] = useState('');
   const [due, onDueChange] = useState(new Date());
+  // const [userid, setUserid] = useState('');
+
   const { replace } = useHistory();
 
   const posting = () => {
@@ -33,6 +35,8 @@ export const PostPage = () => {
       .then((response) => {
         // Handle success.
         console.log('Well done!');
+        localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('userid', response.data.user.id);
         replace('/');
       })
       .catch((error) => {
@@ -44,7 +48,7 @@ export const PostPage = () => {
   return (
     <>
       <div className="bg-gray-100 py-8 mx-auto w-[400px]">
-        <div className="grid grid-cols-1 gap-6 my-6 px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 my-6 px-4 md:px-6 lg:px-8 ">
           <div className="flex max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg overflow-hidden mx-auto">
             <div className="flex items-center w-full">
               <div className="w-full">
@@ -147,13 +151,12 @@ export const PostPage = () => {
           </div>
 
           <div className="flex flex-col max-w-xl content-center w-full my-1 bg-white shadow-md rounded-lg mx-auto">
-            <span className="text-black-600 text-sm mx-4 mt-4 ">마감</span>
-            <div className="flex mt-1 relative rounded-md shadow-sm">
+            <span className="text-black-600 text-sm mx-4 mt-4">마감</span>
+            <div className="mt-1 mb-2 ">
               <DateTimePicker
                 onChange={onDueChange}
                 value={due}
-                className="mx-4 mb-4 w-full border-"
-                calendarClassName="border-0 border-2"
+                className="mx-4 mb-4"
               />
             </div>
           </div>

@@ -16,7 +16,7 @@ export const PostOptionPage = () => {
   const [due, onDueChange] = useState(new Date());
   const { replace } = useHistory();
 
-  const posting = () => {
+  const postoption = () => {
     axios
       .post(`http://localhost:1337/api/posts/{postId}`, {
         data: {

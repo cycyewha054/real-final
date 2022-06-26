@@ -26,6 +26,8 @@ export const SignupPage = () => {
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
         localStorage.setItem('userid', response.data.user.id);
+        // localStorage.setItem('username', response.data.user.name);
+
         replace('/');
       })
       .catch((error) => {
@@ -33,6 +35,7 @@ export const SignupPage = () => {
         console.log('An error occurred:', error.response);
       });
   };
+
   return (
     <>
       <div className="bg-gray-100 py-8 mx-auto w-[400px] ">

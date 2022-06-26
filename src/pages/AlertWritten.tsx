@@ -35,9 +35,9 @@ export const AlertWrittenPage = () => {
               <div className="container flex flex-col w-full items-center justify-center bg-white  rounded-lg shadow">
                 <ul className="flex w-full flex-col divide divide-y">
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2">
+                        <div className="flex w-2/5 mx-2">
                           <button
                             type="submit"
                             className=" bg-green-200 text-green-700 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -61,9 +61,9 @@ export const AlertWrittenPage = () => {
                   </li>
 
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5 mx-2 ">
                           <button
                             type="submit"
                             className=" bg-green-200 text-green-700 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -87,9 +87,9 @@ export const AlertWrittenPage = () => {
                   </li>
 
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer  flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-red-200 text-red-500 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -113,9 +113,9 @@ export const AlertWrittenPage = () => {
                   </li>
 
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className=" select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5 mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-400 text-black-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -138,9 +138,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -163,9 +163,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -188,9 +188,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className=" select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -213,9 +213,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="flex  select-none cursor-pointer  flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5 mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -238,9 +238,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className="select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -263,9 +263,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className=" select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5 mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -288,9 +288,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className=" select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
@@ -313,9 +313,9 @@ export const AlertWrittenPage = () => {
                     </div>
                   </li>
                   <li className="flex mx-2 flex-row">
-                    <div className="flex  select-none cursor-pointer flex flex-1 items-center my-4">
+                    <div className=" select-none cursor-pointer flex flex-1 items-center my-4">
                       <div className="mx-2 space-x-1 flex w-1/2">
-                        <div className="flex w-2/5 w-full mx-2 ">
+                        <div className="flex w-2/5  mx-2 ">
                           <button
                             type="submit"
                             className=" bg-gray-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl "
